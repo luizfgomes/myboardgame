@@ -1414,7 +1414,7 @@ GameObject:
   - component: {fileID: 301423252}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1431,7 +1431,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e297ae4cab77106438f17895328d1216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isPvp: 1
+  isPvp: 0
+  _tabelwidth: 16
+  _tabelDepht: 16
   randomPlayer2: 2
   _player1: Mage
   _player2: Mage
@@ -7126,7 +7128,7 @@ MonoBehaviour:
   - {fileID: 106858417}
   - {fileID: 1817376319}
   - {fileID: 961977156}
-  menuState: 4
+  menuState: 3
 --- !u!4 &1344257915
 Transform:
   m_ObjectHideFlags: 0

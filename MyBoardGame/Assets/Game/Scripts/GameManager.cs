@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
     public bool isPvp = false;
-    private int _tabelwidth = 16;
-    private int _tabelDepht = 16;
+    [SerializeField] private int _tabelwidth = 16;
+    [SerializeField] private int _tabelDepht = 16;
     private int _playerValue = 0;
 
 
@@ -21,10 +21,7 @@ public class GameManager : MonoBehaviour {
 
         set {
 
-            if ((value > 8) && (value <30)) {
-
-                _tabelwidth = value;
-            }
+             _tabelwidth = value;
         }
     }
 
@@ -34,10 +31,7 @@ public class GameManager : MonoBehaviour {
 
         set {
 
-            if ((value>8)&&(value<30)) {
-
-                _tabelDepht = value;
-            }
+            _tabelDepht = value;
         }
     }
 

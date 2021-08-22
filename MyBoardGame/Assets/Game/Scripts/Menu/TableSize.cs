@@ -27,7 +27,7 @@ public class TableSize : MonoBehaviour {
            
 
         if (int.Parse(width.text) >= 8 && int.Parse(width.text) <= 30 &&
-            int.Parse(depht.text) >= 8&& int.Parse(depht.text) < 30 ) {
+            int.Parse(depht.text) >= 8 && int.Parse(depht.text) < 30 ) {
 
             gameManager.TabelWidth = int.Parse(width.text);
             gameManager.TabelDepht = int.Parse(depht.text);
