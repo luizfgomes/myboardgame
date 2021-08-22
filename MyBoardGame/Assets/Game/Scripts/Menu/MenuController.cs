@@ -15,7 +15,7 @@ public class MenuController : MonoBehaviour {
         Settings,
         SelectMode,
         TableSize,
-        SelectChar
+        PlayerSelect
     }
 
     public MenuState menuState;
@@ -55,17 +55,17 @@ public class MenuController : MonoBehaviour {
                 menuState=MenuState.SelectMode;
                 break;
             case "TableSize":
-                menuState=MenuState.SelectMode;
+                menuState=MenuState.TableSize;
                 break;
-            case "SelectChar":
-                menuState=MenuState.SelectMode;
+            case "PlayerSelect":
+                menuState=MenuState.PlayerSelect;
                 break;
         }
     }
 
     public static string ExternalAccessCodeMenuName(string menu) {
 
-        MenuController menuController = new MenuController();
+        MenuController menuController =  new MenuController();
         menuController.MenuName(menu);
         return menu;
     }

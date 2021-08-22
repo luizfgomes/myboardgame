@@ -8,25 +8,33 @@ public class TableSize : MonoBehaviour {
 
     [SerializeField] private GameManager gameManager;
     [SerializeField] private InputField width;
-    [SerializeField] private InputField deph;
+    [SerializeField] private InputField depht;
     [SerializeField] private TMP_Text feedback;
 
-
+    private MenuController menuController;
     public void Start() {
 
         feedback.text = "";
+        menuController=GetComponent<MenuController>();
     }
     public void SetGameManagerValues() {
 
+        if (width.text==""&&depht.text=="") {
+            
+            StartCoroutine(FeedBackMsg(5f));
+            return;
+        }
+           
+
         if (int.Parse(width.text) >= 8 && int.Parse(width.text) <= 30 &&
-            int.Parse(deph.text) >= 8&&int.Parse(deph.text) < 30) {
+            int.Parse(depht.text) >= 8&& int.Parse(depht.text) < 30 ) {
 
             gameManager.TabelWidth = int.Parse(width.text);
-            gameManager.TabelDepht = int.Parse(deph.text);
-            MenuController.ExternalAccessCodeMenuName("SelectChar");
-            LoadingNewScene.StartNewScene("");
-        } else {
-            
+            gameManager.TabelDepht = int.Parse(depht.text);
+            menuController.MenuName("PlayerSelect");
+        }
+        else {
+
             StartCoroutine(FeedBackMsg(5f));
         }
 

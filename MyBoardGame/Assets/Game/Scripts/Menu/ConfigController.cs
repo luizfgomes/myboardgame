@@ -57,7 +57,7 @@ public class ConfigController : MonoBehaviour
 
     public void MusicVolume(float volume) {
 
-        musicMixer.SetFloat("musicvolume", volume);
+        musicMixer.SetFloat("MusicVolume", volume);
         PlayerPrefs.SetFloat("musicvolume", volume);
     }
 

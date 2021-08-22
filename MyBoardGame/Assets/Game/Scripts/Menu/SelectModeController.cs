@@ -6,6 +6,7 @@ public class SelectModeController : MonoBehaviour {
     [SerializeField] private GameManager gameManager;
 
     public void SetGameMode(bool value) {
+        
         gameManager.isPvp = value;
     }
 }
