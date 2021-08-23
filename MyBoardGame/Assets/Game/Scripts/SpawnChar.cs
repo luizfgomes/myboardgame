@@ -29,6 +29,7 @@ public class SpawnChar : MonoBehaviour {
                 instantiate.GetComponent<Status>().moves=i.moves;
                 instantiate.GetComponent<Status>().attack=i.attack;
                 instantiate.GetComponent<Status>().health=i.health;
+                instantiate.gameObject.name="Player1";
                 instantiate.transform.localPosition = new Vector3(spacesOfBoard.FindSpacesPosition(random).x, 1.4f, spacesOfBoard.FindSpacesPosition(random).z);
             }
 
@@ -39,6 +40,7 @@ public class SpawnChar : MonoBehaviour {
                 instantiate.GetComponent<Status>().moves=i.moves;
                 instantiate.GetComponent<Status>().attack=i.attack;
                 instantiate.GetComponent<Status>().health=i.health;
+                instantiate.gameObject.name="Player2";
                 int random = Random.Range(spacesOfBoard.spaces.Length/2, spacesOfBoard.spaces.Length);
 
                 instantiate.transform.localPosition=new Vector3(spacesOfBoard.FindSpacesPosition(random).x, 1.4f, spacesOfBoard.FindSpacesPosition(random).z);

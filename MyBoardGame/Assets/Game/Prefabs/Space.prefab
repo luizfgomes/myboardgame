@@ -108,10 +108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnsGameObjects:
-  - {fileID: 714599320195057026, guid: ff4b350d1988a6646a80a1930d310c87, type: 3}
+  - {fileID: 2179570466485148984, guid: f9c4fae348df8e94cb85082324c9bbe9, type: 3}
   - {fileID: 8523165958526142133, guid: eb699baf5a5c31441a7e16b797c65269, type: 3}
   - {fileID: 8721915521024649047, guid: 4460d79eea0f3914c9dd2caea9f0377a, type: 3}
-  - {fileID: 2179570466485148984, guid: f9c4fae348df8e94cb85082324c9bbe9, type: 3}
   isCharSpawn: 0
 --- !u!114 &2829409750024599767
 MonoBehaviour:
@@ -127,3 +126,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerInThisPosition: 0
   isEnabledToMove: 0
+  namePlayer: 

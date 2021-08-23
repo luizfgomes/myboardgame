@@ -13,6 +13,8 @@ public class MousePositionForMovePlayer : MonoBehaviour
 
     public GameObject[] players;
 
+    public HUDController hud;
+
     void Start() {
         StartCoroutine(FindPlayers());    
     }
@@ -28,18 +30,23 @@ public class MousePositionForMovePlayer : MonoBehaviour
 
         if (camera!=null)
             camera=players[TurnController.playerTurn].GetComponentInChildren<Camera>();
-        
-        
     }
 
     private void Update() {
 
+        if (camera==null)
+            return;
 
-        Debug.Log(TurnController.playerTurn);
-        Debug.Log(players.Length);
-        Debug.Log(TurnController.playerTurn<players.Length);
+        if (players[0].GetComponent<Status>().health<0 ||players[1].GetComponent<Status>().health<0) {
+            hud.EnabledGameOver();
+            return;
+        }
+
+        if (hud.isEnabledCanvas)
+            return;
+            
+
         Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-
 
         if (Physics.Raycast(ray, out RaycastHit raycastHitPlayer, layerPlayer)) {
 
@@ -51,14 +58,38 @@ public class MousePositionForMovePlayer : MonoBehaviour
             }
 
         } 
+
         if (Physics.Raycast(ray, out RaycastHit raycastHit, layerMask)) {
 
             transform.position=raycastHit.point;
+
+
             if (raycastHit.collider.gameObject.tag=="Space") {
+
+                if (Input.GetMouseButtonDown(0)) {
+
+                    //FightCheck
+                    if (raycastHit.collider.GetComponent<SpaceStatusController>().isPlayerInThisPosition&&
+                        raycastHit.collider.GetComponent<SpaceStatusController>().namePlayer!=players[TurnController.playerTurn].gameObject.name) {
+
+                        BattleLogic.StartBattle(players[0].GetComponent<Status>().extraDice, players[1].GetComponent<Status>().extraDice, TurnController.playerTurn);
+                        hud.EnabledCanvas();
+                        StartCoroutine(SetNewTurn(TurnController.playerTurn));
+                    }
+                }
 
                 if (raycastHit.collider.GetComponent<SpaceStatusController>().isEnabledToMove) {
 
                     if (Input.GetMouseButtonDown(0)) {
+
+                        //FightCheck
+                        if (raycastHit.collider.GetComponent<SpaceStatusController>().isPlayerInThisPosition ) {
+
+                            BattleLogic.StartBattle(players[0].GetComponent<Status>().extraDice, players[1].GetComponent<Status>().extraDice, TurnController.playerTurn);
+                            hud.EnabledCanvas();
+                            StartCoroutine(SetNewTurn(TurnController.playerTurn));
+                            Debug.Log("Oi");
+                        }
 
                         RaycastController.isMove=false;
 

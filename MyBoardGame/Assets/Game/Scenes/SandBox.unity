@@ -984,6 +984,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mage
       objectReference: {fileID: 0}
+    - target: {fileID: 8671669191315366711, guid: a5b4d5bfe1884ee45924bf3db4333c60,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5b4d5bfe1884ee45924bf3db4333c60, type: 3}
 --- !u!1001 &362355269
@@ -4547,6 +4552,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1830833270}
   - component: {fileID: 1830833269}
+  - component: {fileID: 1830833271}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -4629,6 +4635,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!114 &1830833271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1830833268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6148e59778c3e2a409ed0df73f175ac5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1852112170
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5412,6 +5430,11 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 171715642}
+    - target: {fileID: 4028128961497152261, guid: ffeda6451b494434bafa99f0a8f9a05f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4028128961497152262, guid: ffeda6451b494434bafa99f0a8f9a05f,
         type: 3}
       propertyPath: m_Name

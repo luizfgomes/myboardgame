@@ -13,12 +13,14 @@ public class Status : MonoBehaviour {
     public int health;
 
     private void Start() {
+
         ResetMovesValue();
-        extraAttack=false;
-        extraDice=false;
     }
 
     public void ResetMovesValue() {
+
         tempMoves=moves;
+        extraAttack=false;
+        extraDice=false;
     }
 }

@@ -3,10 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class PowerUpsCollector : MonoBehaviour {
+    
     public Status status;
+    public AudioSource source;
+    public AudioClip clip;
 
     private void Start() {
         status=GetComponent<Status>();
+        source = GetComponent<AudioSource>();
     }
 
     void OnTriggerEnter(Collider other) {
@@ -25,9 +29,12 @@ public class PowerUpsCollector : MonoBehaviour {
             case "ExtraAttack":
                 status.extraAttack=true;
                 break;
+                source.clip=clip;
+                source.Play();
         }
 
-        if(other.gameObject.tag != "Space")
+
+        if (other.gameObject.tag != "Space")
             Destroy(other.gameObject);
     }
 }
