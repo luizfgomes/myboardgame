@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 2593029152134484692}
   - component: {fileID: 830123904246130300}
   - component: {fileID: 1743514258476249791}
-  m_Layer: 0
+  - component: {fileID: 2829409750024599767}
+  m_Layer: 8
   m_Name: Space
   m_TagString: Space
   m_Icon: {fileID: 0}
@@ -60,7 +61,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 3127c84e8c184304687985df276eb628, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -89,11 +90,11 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8421015099902941590}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 1, z: 8.961286}
+  m_Center: {x: 0, y: 6.8991045e-16, z: -3.9806406}
 --- !u!114 &1743514258476249791
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,3 +113,17 @@ MonoBehaviour:
   - {fileID: 8721915521024649047, guid: 4460d79eea0f3914c9dd2caea9f0377a, type: 3}
   - {fileID: 2179570466485148984, guid: f9c4fae348df8e94cb85082324c9bbe9, type: 3}
   isCharSpawn: 0
+--- !u!114 &2829409750024599767
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8421015099902941590}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b98c5555e817910458f3012f12d1cb35, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isPlayerInThisPosition: 0
+  isEnabledToMove: 0
